@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tool Links</title>
+  <meta name="description" content="Collection of tools and quick links." />
+  <style>
+    :root{ --bg:#0c0c0c; --card:#111; --muted:#9aa4b2; --text:#e6e6e6; --accent:#e53935; --radius:10px; --gap:14px; }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.4;}
+    .container{max-width:900px;margin:0 auto;padding:20px 14px 60px;}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px;}
+    header h1{font-size:1.3rem;font-weight:600} header span{font-size:0.85rem;opacity:0.7}
+    .item{background:var(--card);border:1px solid #1f1f1f;border-radius:var(--radius);padding:14px;margin-bottom:14px;transition:transform .08s ease, box-shadow .08s ease;display:grid;grid-template-columns: 1fr auto;gap:12px;align-items:start;}
+    .item:focus-within,.item:hover{transform: translateY(-2px);box-shadow: 0 6px 18px rgba(0,0,0,0.45);}
+    .meta{display:flex;flex-direction:column;gap:8px}
+    .title{font-weight:600;font-size:0.98rem;display:flex;align-items:center;gap:6px}
+    .title .hint{font-weight:400;opacity:0.7;font-size:0.85rem}
+    .link{background:#0e0e0e;border:1px solid #242424;border-radius:8px;padding:10px 12px;font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;font-size:0.85rem;color:#cfcfcf;word-break: break-all;display:inline-block;text-decoration:none}
+    .actions{display:flex;gap:10px;margin-top:12px;width:100%}
+    .btn{flex:1;padding:10px 12px;border-radius:8px;border:1px solid #2a2a2a;background:#151515;color:var(--text);font-weight:600;cursor:pointer;transition:transform .06s ease, background .08s ease;text-align:center}
+    .btn:active{ transform: translateY(1px); } .btn:focus{ outline:3px solid rgba(229,57,53,0.18); outline-offset:2px; }
+    .btn.open{ background:var(--accent); border-color:var(--accent); color:#fff; }
+    .small-actions{ display:flex; flex-direction:column; gap:8px; min-width:170px; align-items:stretch; }
+    @media (max-width:520px){ .item{ grid-template-columns: 1fr; } .small-actions{ flex-direction:row; min-width:unset; } }
+    #toast{ position:fixed; left:50%; transform:translateX(-50%) translateY(12px); bottom:18px; background:#111; color:var(--text); border:1px solid rgba(255,255,255,0.04); padding:10px 14px; border-radius:999px; box-shadow:0 6px 20px rgba(0,0,0,0.6); opacity:0; pointer-events:none; transition:opacity .18s ease, transform .18s ease; z-index:1000; font-weight:600; font-size:0.95rem; }
+    #toast.show{ opacity:1; transform:translateX(-50%) translateY(0); pointer-events:auto; }
+    a.link:focus{ outline:3px solid rgba(255,255,255,0.06); outline-offset:2px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tool Links</h1>
+      <span>Authorized User</span>
+    </header>
+
+    <div class="item" data-url="https://rbxlab.st/Bot-Groups/setting">
+      <div class="meta">
+        <div class="title">Group Botter <span class="hint">(Beta – use at your own risk)</span></div>
+        <a class="link" href="https://rbxlab.st/Bot-Groups/setting" target="_blank" rel="noopener noreferrer">https://rbxlab.st/Bot-Groups/setting</a>
+        <div class="actions">
+          <div class="small-actions">
+            <button class="btn copy" aria-label="Copy Group Botter link">Copy</button>
+            <button class="btn open" aria-label="Open Group Botter link">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item" data-url="https://rbxlab.st/VC-Enabler/setting">
+      <div class="meta">
+        <div class="title">VC Enabler</div>
+        <a class="link" href="https://rbxlab.st/VC-Enabler/setting" target="_blank" rel="noopener noreferrer">https://rbxlab.st/VC-Enabler/setting</a>
+        <div class="actions">
+          <div class="small-actions">
+            <button class="btn copy" aria-label="Copy VC Enabler link">Copy</button>
+            <button class="btn open" aria-label="Open VC Enabler link">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item" data-url="https://rbxlab.st/Join-Any/setting">
+      <div class="meta">
+        <div class="title">Join Anyone</div>
+        <a class="link" href="https://rbxlab.st/Join-Any/setting" target="_blank" rel="noopener noreferrer">https://rbxlab.st/Join-Any/setting</a>
+        <div class="actions">
+          <div class="small-actions">
+            <button class="btn copy" aria-label="Copy Join Anyone link">Copy</button>
+            <button class="btn open" aria-label="Open Join Anyone link">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item" data-url="https://rbxlab.st/Enable-Shaders/setting">
+      <div class="meta">
+        <div class="title">Enable Shaders</div>
+        <a class="link" href="https://rbxlab.st/Enable-Shaders/setting" target="_blank" rel="noopener noreferrer">https://rbxlab.st/Enable-Shaders/setting</a>
+        <div class="actions">
+          <div class="small-actions">
+            <button class="btn copy" aria-label="Copy Enable Shaders link">Copy</button>
+            <button class="btn open" aria-label="Open Enable Shaders link">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item" data-url="https://rbxlab.st/Limiteds-Checker/setting">
+      <div class="meta">
+        <div class="title">Limiteds Checker</div>
+        <a class="link" href="https://rbxlab.st/Limiteds-Checker/setting" target="_blank" rel="noopener noreferrer">https://rbxlab.st/Limiteds-Checker/setting</a>
+        <div class="actions">
+          <div class="small-actions">
+            <button class="btn copy" aria-label="Copy Limiteds Checker link">Copy</button>
+            <button class="btn open" aria-label="Open Limiteds Checker link">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item" data-url="https://rbxlab.st/Copy-Clothes/setting">
+      <div class="meta">
+        <div class="title">Copy Clothes</div>
+        <a class="link" href="https://rbxlab.st/Copy-Clothes/setting" target="_blank" rel="noopener noreferrer">https://rbxlab.st/Copy-Clothes/setting</a>
+        <div class="actions">
+          <div class="small-actions">
+            <button class="btn copy" aria-label="Copy Copy Clothes link">Copy</button>
+            <button class="btn open" aria-label="Open Copy Clothes link">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item" data-url="https://rbxlab.st/Copy-Games/setting">
+      <div class="meta">
+        <div class="title">Copy Games</div>
+        <a class="link" href="https://rbxlab.st/Copy-Games/setting" target="_blank" rel="noopener noreferrer">https://rbxlab.st/Copy-Games/setting</a>
+        <div class="actions">
+          <div class="small-actions">
+            <button class="btn copy" aria-label="Copy Copy Games link">Copy</button>
+            <button class="btn open" aria-label="Open Copy Games link">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item" data-url="https://rbxlab.st/Follower-Bot/setting">
+      <div class="meta">
+        <div class="title">Bot Followers <span class="hint">(Beta – use at your own risk)</span></div>
+        <a class="link" href="https://rbxlab.st/Follower-Bot/setting" target="_blank" rel="noopener noreferrer">https://rbxlab.st/Follower-Bot/setting</a>
+        <div class="actions">
+          <div class="small-actions">
+            <button class="btn copy" aria-label="Copy Bot Followers link">Copy</button>
+            <button class="btn open" aria-label="Open Bot Followers link">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+    (function(){
+      const toast = document.getElementById('toast');
+      function showToast(msg, timeout = 2200) {
+        toast.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(showToast._t);
+        showToast._t = setTimeout(() => toast.classList.remove('show'), timeout);
+      }
+      async function writeClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          try { await navigator.clipboard.writeText(text); return true; } catch (e) {}
+        }
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly','');
+          ta.style.position = 'absolute'; ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          const sel = document.getSelection();
+          const range = document.createRange();
+          range.selectNodeContents(ta);
+          sel.removeAllRanges();
+          sel.addRange(range);
+          const ok = document.execCommand('copy');
+          sel.removeAllRanges();
+          document.body.removeChild(ta);
+          return !!ok;
+        } catch (err) { return false; }
+      }
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn'); if (!btn) return;
+        const item = btn.closest('.item'); if (!item) return;
+        const url = item.getAttribute('data-url') || '';
+        if (btn.classList.contains('copy')) {
+          e.preventDefault();
+          if (!url) { showToast('No link available'); return; }
+          writeClipboard(url).then(success => { if (success) showToast('Copied to clipboard'); else showToast('Copy failed — select and press Ctrl+C'); });
+        } else if (btn.classList.contains('open')) {
+          if (!url) { showToast('No link available'); return; }
+          const newWin = window.open(url, '_blank', 'noopener');
+          try { if (newWin) newWin.opener = null; } catch (err) {}
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && document.activeElement) {
+          const focusedItem = document.activeElement.closest('.item');
+          if (focusedItem) {
+            const url = focusedItem.getAttribute('data-url');
+            if (url) { window.open(url, '_blank', 'noopener'); }
+          }
+        }
+      });
+      document.querySelectorAll('.item').forEach(it => it.setAttribute('tabindex','0'));
+    })();
+  </script>
+</body>
+</html>
